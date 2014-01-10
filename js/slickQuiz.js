@@ -35,6 +35,7 @@
             questionCountClass     = 'questionCount',
             questionGroupClass     = 'questions',
             questionClass          = 'question',
+            questionPictureClass   = 'question-pic',
             answersClass           = 'answers',
             responsesClass         = 'responses',
             correctClass           = 'correctResponse',
@@ -49,6 +50,7 @@
             _questionCount         = '.' + questionCountClass,
             _questions             = '.' + questionGroupClass,
             _question              = '.' + questionClass,
+            _questionPicture       = '.' + questionPictureClass,
             _answers               = '.' + answersClass,
             _responses             = '.' + responsesClass,
             _correct               = '.' + correctClass,
@@ -186,7 +188,9 @@
                                 var input = '<input id="' + optionId + '" name="' + inputName +
                                             '" type="' + inputType + '" /> ';
 
-                                var optionLabel = '<label for="' + optionId + '">' + answer.option + '</label>';
+								var picture = '<img class="'+ questionPictureClass +'" alt="' + optionId + '" src="' + answer.image + '"/>';
+                                var optionLabel = '<label for="' + optionId + '">' + picture + answer.option + '</label>';
+                                
 
                                 var answerContent = $('<li></li>')
                                     .append(input)
